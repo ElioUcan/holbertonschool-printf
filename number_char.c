@@ -32,7 +32,7 @@ for (i = 0; format[i] != '\0'; i++)
             str = va_arg(args, char *);
             if (str == NULL)
             {
-            return (NULL);
+            return (-1);
             }
             for (j = 0; str[j] != '\0'; j++)
             {       
