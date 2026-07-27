@@ -6,10 +6,36 @@
 
 int _printf(const char *format, ...)
 {
+va_list args;
 int i = 0;
+int lenght = 0;
+
+
+va_start(args, format);
 while(format[i] != '\0')
 {
+    if (format[i] == '%')
+    {
+        i++;
+        if (format[i] == 's')
+        {
+            char *str;
+            str = va_arg(args, char *);
+            int j;
+            for (j = 0; str[j] != '\0'; j++)
+            {       
+                lenght++;       
+            }       
+        }
+        else if (format[i] == 'c')
+        {
+            lenght++;
+        }
+    }
 i++;
 }
-return (i);
+
+
+va_end(args);
+return (lenght);
 }
