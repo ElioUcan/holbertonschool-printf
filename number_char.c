@@ -34,6 +34,7 @@ while(format[i] != '\0')
             lenght++;
         }
     }
+lenght++;
 i++;
 }
 
