@@ -29,7 +29,7 @@ for (i = 0; format[i] != '\0'; i++)
                 lenght++;       
             }       
         }
-        else if (format[i] == 'c')
+        else
         {
             lenght++;
         }
