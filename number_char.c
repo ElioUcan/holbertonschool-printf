@@ -30,7 +30,10 @@ for (i = 0; format[i] != '\0'; i++)
             int j;
 
             str = va_arg(args, char *);
-            
+            if (str == NULL)
+            {
+            return (-1);
+            }
             for (j = 0; str[j] != '\0'; j++)
             {       
                 write(1, &str[j], 1);
