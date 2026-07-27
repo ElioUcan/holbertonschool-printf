@@ -33,8 +33,11 @@ while(format[i] != '\0')
         {
             lenght++;
         }
+        else
+        {
+            lenght++;
+        }
     }
-lenght++;
 i++;
 }
 
