@@ -97,7 +97,7 @@ for (i = 0; format[i] != '\0'; i++)
         {
             int num;
             num = va_arg(args, int);
-            lenght *= p_numbers(num);
+            lenght += p_numbers(num);
         }
         else
         {
