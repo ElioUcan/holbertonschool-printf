@@ -1,8 +1,44 @@
 #include "main.h"
 
 /**
- * 
+ * p_numbers - Calculates the number
+ * @num: int
+ * Return: int
  */
+
+int p_numbers(int num)
+{
+int length = 0;
+unsigned int n;
+char c;
+if (num < 0)
+{
+write(1, "-", 1);
+length++;
+n = -num;
+}
+else
+{
+n = num;
+}
+if (n > 9)
+{
+length += p_numbers(n / 10);
+}
+c = (n % 10) + '0';
+write(1, &c, 1);
+length++;
+return (length);
+}
+
+
+
+/**
+ * _printf - Returns the lenght
+ * @format: char
+ * Return: int
+ */
+
 
 int _printf(const char *format, ...)
 {
@@ -51,6 +87,12 @@ for (i = 0; format[i] != '\0'; i++)
         {   
             write(1, &format[i], 1);
             lenght++;
+        }
+        else if (format[i] == 'd' || format[i] == 'i')
+        {
+            int num;
+            num = va_arg(args, int);
+            lenght *= p_numbers(num);
         }
         else
         {

@@ -4,6 +4,6 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-
+int p_numbers(int num);
 
 #endif
