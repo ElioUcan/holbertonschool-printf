@@ -27,27 +27,19 @@ for (i = 0; format[i] != '\0'; i++)
         if (format[i] == 's')
         {
             char *str;
-            char *nil;
             int j;
 
             str = va_arg(args, char *);
             if (str == NULL)
             {
-            nil = "(null)";
-            for (j = 0; nil[i] != '\0'; j++)
-            {
-            write(1, &str[j], 1);
-            lenght++;   
+            str = "(null)";
             }
-            }
-            else
-            {
             for (j = 0; str[j] != '\0'; j++)
             {       
                 write(1, &str[j], 1);
                 lenght++;       
             }
-            }       
+           
         }else if (format[i] == 'c')
         {
             char c;
