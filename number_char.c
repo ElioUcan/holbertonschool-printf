@@ -8,13 +8,16 @@
 
 int p_numbers(int num)
 {
-int length = 0;
+int len;
 unsigned int n;
 char c;
+
+
+len = 0;
 if (num < 0)
 {
 write(1, "-", 1);
-length++;
+len++;
 n = -num;
 }
 else
@@ -23,12 +26,12 @@ n = num;
 }
 if (n > 9)
 {
-length += p_numbers(n / 10);
+len += p_numbers(n / 10);
 }
 c = (n % 10) + '0';
 write(1, &c, 1);
-length++;
-return (length);
+len++;
+return (len);
 }
 
 
@@ -76,14 +79,16 @@ for (i = 0; format[i] != '\0'; i++)
                 lenght++;       
             }
            
-        }else if (format[i] == 'c')
+        }
+        else if (format[i] == 'c')
         {
             char c;
             c = va_arg(args, int);
             write(1, &c, 1);
             lenght++;
 
-        }else if (format[i] == '%')
+        }
+        else if (format[i] == '%')
         {   
             write(1, &format[i], 1);
             lenght++;
