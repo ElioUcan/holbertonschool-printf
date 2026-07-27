@@ -20,8 +20,10 @@ while(format[i] != '\0')
         if (format[i] == 's')
         {
             char *str;
-            str = va_arg(args, char *);
             int j;
+
+            str = va_arg(args, char *);
+            
             for (j = 0; str[j] != '\0'; j++)
             {       
                 lenght++;       
