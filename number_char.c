@@ -46,14 +46,17 @@ for (i = 0; format[i] != '\0'; i++)
             c = va_arg(args, int);
             write(1, &c, 1);
             lenght++;
+
         }else if (format[i] == '%')
         {   
             write(1, &format[i], 1);
             lenght++;
-        }else
+        }
+        else
         {
+            write(1, "%", 1);
             write(1, &format[i], 1);
-            lenght++;
+            lenght+=2;
         }
         }
     }
