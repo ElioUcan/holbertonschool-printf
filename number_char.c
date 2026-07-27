@@ -20,7 +20,7 @@ for (i = 0; format[i] != '\0'; i++)
         i++;
         if (format[i] == '\0')
         {
-        return;       
+        return (-1);       
         }
         else
         {
